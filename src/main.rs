@@ -1,6 +1,29 @@
 fn main() {
     // run_variables();
-    run_arithmetic()
+    // run_arithmetic();
+    run_strings();
+}
+
+fn run_strings() {
+    // rust has two type of strings
+    // both always stored utf-8 encoded
+    // String - a modifiable, owned string
+    // &str - a read-only string. for string literals
+    let name: &str = "Agung";
+    let mut sentence = String::new();
+
+    println!("My name is {name}");
+    
+    sentence.push_str("Hello, ");
+    sentence.push_str(name);
+
+    println!("Final string: {sentence}");
+
+    // Using {:?} is a convenient way to print array/vector/struct of values 
+    // for debugging purposes, and it’s commonly used in code.
+    println!("{:?}", &sentence[0..5]); // output: "Hello"
+    println!("{}", &sentence[0..5]); // output: Hello
+    // println!("{:?}", &sentence[5..13]); //! error, out of bound index.
 }
 
 fn run_variables() {
