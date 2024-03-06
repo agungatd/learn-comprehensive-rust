@@ -78,14 +78,26 @@ fn scope_shadows() {
     println!("after: {a}"); 
 }
 
+fn collatz_length(mut n: u32) -> u32 {
+    let mut sequence = 1;
+
+    while n > 1 {
+        n = if n % 2 == 0 { n / 2 } else { 3 * n + 1 };
+        sequence += 1;
+    }
+
+    sequence
+}
+
 fn main() {
-    // let age: u32 = 18;
-    // let x = age_cond(age);
-    // // if as an expression
-    // let y = if age < 18 {"Young!"} else {"Adult"};
-    // println!("the age category: {x}");
-    // println!("the age is: {y}");
-    // loops();
-    // loops_break_label();
+    let age: u32 = 18;
+    let x = age_cond(age);
+    // if as an expression
+    let y = if age < 18 {"Young!"} else {"Adult"};
+    println!("the age category: {x}");
+    println!("the age is: {y}");
+    loops();
+    loops_break_label();
     scope_shadows();
+    println!("sequence for n=5: {}", collatz_length(5));
 }
