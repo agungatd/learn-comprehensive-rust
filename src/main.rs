@@ -63,6 +63,21 @@ fn loops_break_label() {
     println!("elements searched: {elements_searched}");
 }
 
+fn scope_shadows() {
+    let a = 10;
+    println!("before: {a}");
+    {
+        let a = "hello";
+        println!("inner scope: {a}");
+
+        let a = true;
+        println!("shadowed in inner scope: {a}");
+    }
+
+    // "a" will be 10, unaffected by the "a" inside the inner scope
+    println!("after: {a}"); 
+}
+
 fn main() {
     // let age: u32 = 18;
     // let x = age_cond(age);
@@ -71,5 +86,6 @@ fn main() {
     // println!("the age category: {x}");
     // println!("the age is: {y}");
     // loops();
-    loops_break_label();
+    // loops_break_label();
+    scope_shadows();
 }
