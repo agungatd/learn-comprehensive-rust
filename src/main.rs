@@ -1,4 +1,4 @@
 
 fn main() {
-    todo!("Excercise Geometry")
+    todo!("Ch10 User-defined type")
 }
